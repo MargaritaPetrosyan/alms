@@ -1,0 +1,25 @@
+<div class="catalog">
+  <form class="catalog-filter" action="/catalog" method="POST">
+    <div class="search-container">
+      <input type="text" placeholder="Search..." class="search-input"
+      name="search" value="<%= typeof search === 'undefined' ? "" : search%>" />
+      <button type="submit" class="search-button">Search</button>
+    </div>
+  </form>
+  <div class="book-grid-container">
+    <% books.forEach(book => { %>
+    <div class="book-grid-item">
+      <a href="/book/<%= book.isbn %>" class="book-link">
+        <img width="200px" src="<%= book.imageUrl %>" />
+        <h3><%= book.title %></h3>
+        <p><%= book.author %></p>
+        <% if (book.availability) { %>
+          <button class="catalog-availability-check-button" disabled>Available</button>
+        <% } else { %>
+          <button class="catalog-unavailability-check-button" disabled>Unavailable</button>
+        <% } %>
+      </a>
+    </div>
+    <% }) %>
+  </div>
+</div>
