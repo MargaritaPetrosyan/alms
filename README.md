@@ -22,6 +22,6 @@ npm start
 
 ## Admin Account credentials
 
-email: `mher.hunanyan2@gmail.com`
+email: `magpetrosyan03@gmail.com`
 
-password: `123`
+password: `1234`
