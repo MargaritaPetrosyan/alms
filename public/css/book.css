@@ -28,7 +28,7 @@
 .add-book-form h2 {
   text-align: center;
   font-size: 30px;
-  font-family: sans-serif;
+  font-family: Montserrat, sans-serif;
   margin-bottom: 20px;
 }
 
@@ -43,7 +43,7 @@
   width: 100%;
   padding: 9px;
   font-size: 17px;
-  font-family: sans-serif;
+  font-family: Montserrat, sans-serif;
   background-color: rgba(0, 0, 0, 0.778);
   color: white;
   border: none;
@@ -92,14 +92,14 @@
 }
 
 .book-grid-item h3 {
-  font-family: "Georgia", serif;
+  font-family: Montserrat, sans-serif;
   font-size: 24px;
   color: #000000;
   text-shadow: 2px 2px 4px #ffffff;
 }
 
 .book-grid-item p {
-  font-family: "Georgia", serif;
+  font-family: Montserrat, sans-serif;
   font-size: 18px;
   color: #000000;
   text-shadow: 1px 1px 2px #ffffff;
@@ -297,7 +297,8 @@
   background-color: rgb(25, 118, 210);
   font-family: Roboto, Helvetica, Arial, sans-serif;
   color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
+    rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -306,7 +307,8 @@
 
 .editButton:hover {
   background-color: rgb(21, 101, 192);
-  box-shadow: gba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+  box-shadow: gba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
 }
 
 .delButton {
@@ -315,7 +317,8 @@
   font-size: 14px;
   background-color: #e74c3c;
   color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
+    rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
   padding: 0.625em 1.5em;
   border: none;
   border-radius: 5px;
@@ -358,7 +361,7 @@
 .title-edit-book-page {
   text-align: center;
   font-size: 30px;
-  font-family: sans-serif;
+  font-family: Montserrat, sans-serif;
   margin-bottom: 20px;
 }
 
@@ -373,7 +376,7 @@
   width: 100%;
   padding: 9px;
   font-size: 17px;
-  font-family: sans-serif;
+  font-family: Montserrat, sans-serif;
   background-color: rgba(0, 0, 0, 0.778);
   color: white;
   border: none;
@@ -410,7 +413,7 @@
   width: 100%;
   padding: 9px;
   font-size: 17px;
-  font-family: sans-serif;
+  font-family: Montserrat, sans-serif;
   background-color: rgba(0, 0, 0, 0.778);
   color: white;
   border: none;

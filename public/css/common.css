@@ -2,54 +2,65 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: peachpuff;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-image: url('/images/background-image.png');
-  background-repeat: repeat-y;
-  background-size: 100% auto;
+  font-family: Montserrat, sans-serif;
+  background-image: url("/images/background-image.png");
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Needed for the pseudo-element positioning */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+  pointer-events: none; /* Ensures the overlay doesn't block interactions */
+  z-index: -1; /* Sends the overlay behind the content */
 }
 
 .main {
   flex: 1;
+  font-family: Montserrat, sans-serif;
 }
 
-
 .error-container {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-family: 'Arial', sans-serif;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: Montserrat, sans-serif;
 }
 
 .error-container h1 {
-    font-size: 6rem;
-    margin: 0;
+  font-size: 6rem;
+  margin: 0;
 }
 
 .error-container p {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .error-container a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 25px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .error-container a:hover {
-    background-color: #555;
+  background-color: #555;
 }
 
 .error-text {
