@@ -7,7 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "compile:sass": "sass public/scss/main.scss public/css/main.css",
+    "watch:sass": "sass public/scss/main.scss public/css/main.css -w",
+    "dev": "concurrently \"npm run watch:sass\" \"npm run start\""
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +28,8 @@
     "mongoose": "^8.0.3"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.0.2",
+    "sass": "^1.56.1"
   }
 }

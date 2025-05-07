@@ -1,51 +1,50 @@
-<div class="individual-book-container">
+<div class="book">
   <img
-    class="book-cover"
+    class="book__cover"
     alt="Cover of <%= book.title %>"
     src="<%= book.imageUrl %>"
   />
-  <div class="individual-book-details">
-    <h2 class="book-title"><%= book.title %></h2>
-    <p class="book-author"><%= book.author %></p>
-    <p class="book-author"><%= book.category %></p>
+  <div class="book__details">
+    <h2 class="book__title" style="width: 400px"><%= book.title %></h2>
+    <p class="book__author"><%= book.author %></p>
+    <p class="book__category"><%= book.category %></p>
     <% if (isAdmin) { %>
-    <div class="buttom-form">
-      <a class="editButton" href="/edit-book/<%= book.isbn %>">Edit</a>
+    <div class="book__admin-actions">
+      <a class="book__edit-button" href="/edit-book/<%= book.isbn %>">Edit</a>
       <form
-        class="buttons-form"
+        class="book__delete-form"
         action="/book-delete/<%= book.isbn %>"
         method="post"
       >
-        <button type="submit" class="delButton">Delete</button>
+        <button type="submit" class="book__delete-button">Delete</button>
       </form>
     </div>
     <% } %>
   </div>
-</div>
-
-<div class="book-availability-check-buttons">
-  <% if (book.availability) { %>
-  <button class="book-availability-check-button">Available</button>
-  <% } else { %>
-  <button class="book-unavailability-check-button">Unavailable</button>
-  <% } %>
-</div>
-
-<div class="related-books">
-  <% if (relatedBooks.length) { %>
-  <h2 class="related-book-title">Related Books</h2>
-  <div class="related-book-container">
-    <% relatedBooks.forEach((relatedBook) => { %>
-    <div class="related-book-item">
-      <img
-        class="related-book-cover"
-        alt="Cover of <%= relatedBook.title %>"
-        src="<%= relatedBook.imageUrl %>"
-      />
-      <h3 class="related-books-title"><%= relatedBook.title %></h3>
-      <p class="related-book-author"><%= relatedBook.author %></p>
-    </div>
-    <% }); %>
+  <div class="book__availability">
+    <% if (book.availability) { %>
+    <button class="book__availability-button">Available</button>
+    <% } else { %>
+    <button class="book__unavailability-button">Unavailable</button>
+    <% } %>
   </div>
-  <% } %>
+
+  <div class="book__related">
+    <% if (relatedBooks.length) { %>
+    <h2 class="book__related-title">Related Books</h2>
+    <div class="book__related-container">
+      <% relatedBooks.forEach((relatedBook) => { %>
+      <div class="book__related-item">
+        <img
+          class="book__related-cover"
+          alt="Cover of <%= relatedBook.title %>"
+          src="<%= relatedBook.imageUrl %>"
+        />
+        <h3 class="book__related-title"><%= relatedBook.title %></h3>
+        <p class="book__related-author"><%= relatedBook.author %></p>
+      </div>
+      <% }); %>
+    </div>
+    <% } %>
+  </div>
 </div>

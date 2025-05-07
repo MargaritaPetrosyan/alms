@@ -1,22 +1,33 @@
 <div class="catalog">
-  <form class="catalog-filter" action="/catalog" method="POST">
-    <div class="search-container">
-      <input type="text" placeholder="Search..." class="search-input"
-      name="search" value="<%= typeof search === 'undefined' ? "" : search%>" />
-      <button type="submit" class="search-button">Search</button>
+  <form class="catalog__filter" action="/catalog" method="POST">
+    <div class="catalog__search-container">
+      <input
+        class="catalog__search-input"
+        type="text"
+        placeholder="Search..."
+        name="search"
+        value="<%= typeof search === 'undefined' ? '' : search %>"
+      />
+      <button class="catalog__search-button" type="submit">Search</button>
     </div>
   </form>
-  <div class="book-grid-container">
+  <div class="catalog__book-grid">
     <% books.forEach(book => { %>
-    <div class="book-grid-item">
-      <a href="/book/<%= book.isbn %>" class="book-link">
-        <img width="200px" src="<%= book.imageUrl %>" />
-        <h3><%= book.title %></h3>
-        <p><%= book.author %></p>
+    <div class="catalog__book-item">
+      <a class="catalog__book-link" href="/book/<%= book.isbn %>">
+        <img
+          class="catalog__book-image"
+          src="<%= book.imageUrl %>"
+          width="200px"
+        />
+        <h3 class="catalog__book-title"><%= book.title %></h3>
+        <p class="catalog__book-author"><%= book.author %></p>
         <% if (book.availability) { %>
-          <button class="catalog-availability-check-button" disabled>Available</button>
+        <button class="catalog__availability-button" disabled>Available</button>
         <% } else { %>
-          <button class="catalog-unavailability-check-button" disabled>Unavailable</button>
+        <button class="catalog__unavailability-button" disabled>
+          Unavailable
+        </button>
         <% } %>
       </a>
     </div>

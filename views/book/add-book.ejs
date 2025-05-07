@@ -1,42 +1,42 @@
-<div class="add-book-container">
-  <div class="add-book-form">
-    <h2>Add New Book</h2>
+<div class="add-book">
+  <div class="add-book__form">
+    <h2 class="add-book__title">Add New Book</h2>
     <% if (errorMessage) { %>
-    <p class="error-text"><%= errorMessage %></p>
+    <p class="add-book__error-text"><%= errorMessage %></p>
     <% } %> <% if (successMessage) { %>
-    <p class="success-text"><%= successMessage %></p>
+    <p class="add-book__success-text"><%= successMessage %></p>
     <% } %>
-    <form action="/add-book" method="POST">
-      <div class="area-item">
-        <label for="title">Title</label>
-        <input type="text" name="title" required />
+    <form class="add-book__form-items" action="/add-book" method="POST">
+      <div class="add-book__area-item">
+        <label class="add-book__label" for="title">Title</label>
+        <input class="add-book__input" type="text" name="title" required />
       </div>
-      <div class="area-item">
-        <label for="author">Author</label>
-        <input type="text" name="author" required />
+      <div class="add-book__area-item">
+        <label class="add-book__label" for="author">Author</label>
+        <input class="add-book__input" type="text" name="author" required />
       </div>
-      <div class="area-item">
-        <label for="isbn">ISBN</label>
-        <input type="text" name="isbn" required />
+      <div class="add-book__area-item">
+        <label class="add-book__label" for="isbn">ISBN</label>
+        <input class="add-book__input" type="text" name="isbn" required />
       </div>
-      <div class="area-item">
-        <label for="category">Category</label>
-        <input type="text" name="category" required />
+      <div class="add-book__area-item">
+        <label class="add-book__label" for="category">Category</label>
+        <input class="add-book__input" type="text" name="category" required />
       </div>
-      <div class="area-item">
-        <label for="imageUrl">Image Url</label>
-        <input type="url" name="imageUrl" required />
+      <div class="add-book__area-item">
+        <label class="add-book__label" for="imageUrl">Image Url</label>
+        <input class="add-book__input" type="url" name="imageUrl" required />
       </div>
-      <div class="availability-container">
+      <div class="add-book__availability-container">
         <input
-          class="availability-checkbox"
+          class="add-book__availability-checkbox"
           type="checkbox"
           name="availability"
           checked
         />
-        <span>Availability</span>
+        <span class="add-book__availability-text">Availability</span>
       </div>
-      <button type="submit">Submit</button>
+      <button class="add-book__submit-button" type="submit">Submit</button>
     </form>
   </div>
 </div>
