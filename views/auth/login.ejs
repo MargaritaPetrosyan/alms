@@ -1,20 +1,29 @@
-<div class="login">
-  <div class="login__form">
-    <h2 class="login__title">Login</h2>
-    <% if (errorMessage) { %>
-    <p class="login__error-text"><%= errorMessage %></p>
-    <% } %>
-    <form action="/login" method="POST" class="login__form-element">
-      <div class="login__input-group">
-        <label for="email" class="login__label">Email Address</label>
-        <input type="email" name="email" required class="login__input" />
-      </div>
-      <div class="login__input-group">
-        <label for="password" class="login__label">Password</label>
-        <input type="password" name="password" required class="login__input" />
-      </div>
-      <button type="submit" class="login__submit-button">Submit</button>
-    </form>
-    <a href="/register" class="login__register-link">Switch to Registration</a>
+<div class="main-content">
+  <div class="login">
+    <div class="login__form">
+      <h2 class="login__title">Login</h2>
+      <% if (errorMessage) { %>
+      <p class="login__error-text"><%= errorMessage %></p>
+      <% } %>
+      <form action="/login" method="POST" class="login__form-element">
+        <div class="login__input-group">
+          <label for="email" class="login__label">Email Address</label>
+          <input type="email" name="email" required class="login__input" />
+        </div>
+        <div class="login__input-group">
+          <label for="password" class="login__label">Password</label>
+          <input
+            type="password"
+            name="password"
+            required
+            class="login__input"
+          />
+        </div>
+        <button type="submit" class="login__submit-button">Submit</button>
+      </form>
+      <a href="/register" class="login__register-link"
+        >Switch to Registration</a
+      >
+    </div>
   </div>
 </div>
