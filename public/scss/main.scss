@@ -1,9 +1,9 @@
-@import "auth";
+@use "auth";
 
-@import "book";
+@use "book";
 
-@import "common";
-@import "header";
-@import "home";
-@import "footer";
-@import "button";
+@use "common";
+@use "header";
+@use "home";
+@use "footer";
+@use "button";

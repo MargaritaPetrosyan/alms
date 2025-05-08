@@ -1,41 +1,43 @@
 <header class="header">
-  <nav class="nav-bar">
-    <a href="/" class="logo">
+  <nav class="header__nav">
+    <a href="/" class="header__logo">
       <img src="/images/logo.png" alt="Logo" />
     </a>
-    <ul class="nav-links">
-      <li>
-        <a href="/" class="<%= page === '/' ? 'active-link': '' %> nav-link"
+    <ul class="header__nav-links">
+      <li class="header__nav-item">
+        <a
+          href="/"
+          class="header__nav-link <%= page === '/' ? 'header__nav-link--active': '' %>"
           >Home</a
         >
       </li>
-      <li>
+      <li class="header__nav-item">
         <a
           href="/catalog"
-          class="<%= page === '/catalog' ? 'active-link' : '' %> nav-link"
+          class="header__nav-link <%= page === '/catalog' ? 'header__nav-link--active' : '' %>"
           >Catalog</a
         >
       </li>
       <% if(isAdmin) { %>
-      <li>
+      <li class="header__nav-item">
         <a
           href="/add-book"
-          class="<%= page === '/add-book' ? 'active-link' : '' %> nav-link"
+          class="header__nav-link <%= page === '/add-book' ? 'header__nav-link--active' : '' %>"
           >Add Book</a
         >
       </li>
       <% } %> <% if(isAuth) { %>
-      <div class="header-name-dropdown">
-        <button class="header-name"><%= user.fullName %></button>
-        <div class="header-name-dropdown-content">
+      <div class="header__name-dropdown">
+        <button class="header__name"><%= user.fullName %></button>
+        <div class="header__name-dropdown-content">
           <a href="/logout">Logout</a>
         </div>
       </div>
       <% } else { %>
-      <li>
+      <li class="header__nav-item">
         <a
           href="/login"
-          class="<%= page === '/login' ? 'active-link' : '' %> nav-link"
+          class="header__nav-link <%= page === '/login' ? 'header__nav-link--active' : '' %>"
           >Login</a
         >
       </li>

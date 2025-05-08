@@ -1,8 +1,6 @@
 .login {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 100px 0;
+  margin: 200px 0;
 }
 .login__form {
   display: flex;
@@ -130,6 +128,9 @@
   cursor: pointer;
 }
 
+.book {
+  padding: 100px;
+}
 .book__cover {
   width: auto;
   height: 500px;
@@ -196,27 +197,9 @@
 .book__delete-button:hover {
   background-color: #c0392b;
 }
-.book__availability-button {
+.book__availability {
   display: flex;
-  margin-top: 20px;
-  background-color: #4caf50;
-  padding: 10px 20px;
-  cursor: default !important;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
-}
-.book__unavailability-button {
-  display: flex;
-  margin-top: 20px;
-  background-color: rgb(128, 128, 128);
-  padding: 10px 20px;
-  cursor: default !important;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
+  gap: 40px;
 }
 
 .catalog {
@@ -237,11 +220,12 @@
   padding: 10px 10px 10px 35px;
   border: 2px solid #ddd;
   border-right: none;
-  border-radius: 5px 0 0 5px;
+  border-radius: 60px 0 0 60px;
   width: 50%;
   background: url("/images/search-icon.png") no-repeat 10px center;
   background-size: 15px;
   background-color: white;
+  color: #757575;
   font-size: 18px;
 }
 .catalog__search-button {
@@ -249,35 +233,34 @@
   padding: 10px 20px;
   border: 2px solid #ddd;
   border-left: none;
-  background-color: #f8f8f8;
+  background-color: #d8d5d4;
+  color: #757575;
   cursor: pointer;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 60px 60px 0;
 }
 .catalog__search-button:hover {
   background-color: #e7e7e7;
 }
-.catalog__book-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  justify-items: center;
-  gap: 50px;
-}
-.catalog__book-item {
-  width: 300px;
+.catalog__book-flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 100px;
+  justify-content: space-around;
+  gap: 150px;
 }
 .catalog__book-link {
   text-decoration: none;
 }
 .catalog__book-image {
   width: 300px;
-  height: 100px;
+  height: auto;
 }
 .catalog__book-title, .catalog__book-author {
   font-family: Montserrat, sans-serif;
   color: #000000;
   text-shadow: 2px 2px 4px #ffffff;
   width: 300px;
+  font-size: 20px;
 }
 .catalog__book-title {
   font-size: 24px;
@@ -436,52 +419,42 @@ body::before {
 }
 
 .header {
-  background-color: rgb(162 152 147/80%);
+  background-color: rgba(162, 152, 147, 0.8);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.header-logo {
-  max-height: 50px;
-}
-
-.nav-bar {
+.header__nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 90px;
   color: #e8dde0;
 }
-
-.logo img {
+.header__logo img {
   height: 50px;
   border-radius: 10%;
 }
-
-.nav-links {
+.header__nav-links {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   align-items: center;
 }
-
-.nav-links li {
+.header__nav-item {
   margin-left: 20px;
 }
-
-.nav-link {
+.header__nav-link {
   text-decoration: none;
   color: #e8dde0;
   font-size: 16px;
   transition: color 0.3s ease;
   padding: 5px 10px;
 }
-
-.active-link {
+.header__nav-link--active {
   color: white;
 }
-
-.header-name {
+.header__name {
+  color: rgba(132, 113, 102, 0.88);
   text-decoration: none;
   padding: 1rem 2rem;
   display: inline-block;
@@ -491,33 +464,30 @@ body::before {
   border: none;
   cursor: pointer;
 }
-
-.header-name-dropdown-content {
+.header__name-dropdown {
+  position: relative;
+}
+.header__name-dropdown:hover .header__name-dropdown-content {
+  display: block;
+}
+.header__name-dropdown-content {
   display: none;
   position: absolute;
   background-color: #e8dde0;
-  min-width: 180px;
+  min-width: 185px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  border-radius: 15px;
 }
-
-.header-name-dropdown-content a {
+.header__name-dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-
-.header-name-dropdown-content a:hover {
+.header__name-dropdown-content a:hover {
   background-color: #f1f1f1;
-}
-
-.header-name-dropdown:hover .header-name-dropdown-content {
-  display: block;
-}
-
-.header-name-dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  border-radius: 10px;
 }
 
 .home {
@@ -647,6 +617,21 @@ body::before {
 }
 
 .view-all-btn:hover {
+  background-color: rgba(117, 97, 86, 0.97);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.btn-availability {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: rgba(132, 113, 102, 0.88);
+  color: white;
+  text-transform: none;
+}
+
+.btn-availability:hover {
   background-color: rgba(117, 97, 86, 0.97);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;

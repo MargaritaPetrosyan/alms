@@ -1,0 +1,84 @@
+// Base header styles
+.header {
+  background-color: rgb(162 152 147 / 80%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 90px;
+    color: #e8dde0;
+  }
+
+  &__logo img {
+    height: 50px;
+    border-radius: 10%;
+  }
+
+  &__nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-item {
+    margin-left: 20px;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: #e8dde0;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+
+    &--active {
+      color: white;
+    }
+  }
+
+  &__name {
+    color: rgba(132, 113, 102, 0.88);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__name-dropdown {
+    position: relative;
+
+    &:hover .header__name-dropdown-content {
+      display: block;
+    }
+
+    &-content {
+      display: none;
+      position: absolute;
+      background-color: #e8dde0;
+      min-width: 185px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 15px;
+
+      a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+          background-color: #f1f1f1;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}

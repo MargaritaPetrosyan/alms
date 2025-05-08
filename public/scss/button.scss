@@ -55,3 +55,17 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+
+.btn-availability {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: rgb(132 113 102 / 88%);
+  color: white;
+  text-transform: none;
+}
+.btn-availability:hover {
+  background-color: rgba(117, 97, 86, 0.97);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

@@ -11,7 +11,7 @@
       <button class="catalog__search-button" type="submit">Search</button>
     </div>
   </form>
-  <div class="catalog__book-grid">
+  <div class="catalog__book-flex">
     <% books.forEach(book => { %>
     <div class="catalog__book-item">
       <a class="catalog__book-link" href="/book/<%= book.isbn %>">
