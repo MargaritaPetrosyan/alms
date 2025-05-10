@@ -130,6 +130,10 @@
 
 .book {
   padding: 100px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
 }
 .book__cover {
   width: auto;
@@ -150,10 +154,13 @@
 }
 .book__title {
   font-size: 1.875em;
-  width: 200px;
-  height: 200px;
+  width: 800px;
+  height: 100px;
 }
 .book__author, .book__category {
+  font-size: 1.25em;
+}
+.book__description {
   font-size: 1.25em;
 }
 .book__admin-actions {
@@ -253,7 +260,7 @@
 }
 .catalog__book-image {
   width: 300px;
-  height: auto;
+  height: 500px;
 }
 .catalog__book-title, .catalog__book-author {
   font-family: Montserrat, sans-serif;

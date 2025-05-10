@@ -5,9 +5,12 @@
     src="<%= book.imageUrl %>"
   />
   <div class="book__details">
-    <h2 class="book__title" style="width: 400px"><%= book.title %></h2>
+    <h2 class="book__title"><%= book.title %></h2>
     <p class="book__author"><%= book.author %></p>
     <p class="book__category"><%= book.category %></p>
+    <p class="book__description"><%= book.description %></p>
+    <!-- new -->
+
     <% if (isAdmin) { %>
     <div class="book__admin-actions">
       <a class="book__edit-button" href="/edit-book/<%= book.isbn %>">Edit</a>
@@ -21,12 +24,16 @@
     </div>
     <% } %>
   </div>
+
   <div class="book__availability">
     <% if (book.availability) { %>
     <button class="btn btn-availability">Available</button>
-    <button class="btn btn-availability">Buy now!</button>
-    <% } else { %>
-    <button class="btn btn-availability">Unavailable</button>
+    <% if (book.pdf) { %>
+    <a href="<%= book.pdf %>" target="_blank" class="btn btn-availability"
+      >View PDF</a
+    >
+    <% } %> <% } else { %>
+    <button class="">Unavailable</button>
     <% } %>
   </div>
 

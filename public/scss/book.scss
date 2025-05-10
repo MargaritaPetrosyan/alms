@@ -90,6 +90,11 @@
 ///
 .book {
   padding: 100px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+
   &__cover {
     width: auto;
     height: 500px;
@@ -112,12 +117,15 @@
 
   &__title {
     font-size: 1.875em;
-    width: 200px;
-    height: 200px;
+    width: 800px;
+    height: 100px;
   }
 
   &__author,
   &__category {
+    font-size: 1.25em;
+  }
+  &__description {
     font-size: 1.25em;
   }
 
@@ -240,7 +248,7 @@
   &__book-image {
     width: 300px;
 
-    height: auto;
+    height: 500px;
   }
 
   &__book-title,

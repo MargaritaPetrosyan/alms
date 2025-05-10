@@ -56,6 +56,8 @@ const postEditBook = async (req, res, next) => {
         category: req.body.category,
         imageUrl: req.body.imageUrl,
         availability: req.body.availability === "on",
+        pdf: req.body.pdf, // <- new field
+        description: req.body.description, // <- new field
       };
 
       await Book.findOneAndUpdate({ isbn }, updatedBookDate);
@@ -70,7 +72,16 @@ const postEditBook = async (req, res, next) => {
 };
 
 const postAddBook = async (req, res, next) => {
-  const { title, author, isbn, category, availability, imageUrl } = req.body;
+  const {
+    title,
+    author,
+    isbn,
+    category,
+    availability,
+    imageUrl,
+    pdf,
+    description,
+  } = req.body; // <- updated
   try {
     const book = await Book.findOne({ isbn });
     if (book) {
@@ -87,6 +98,8 @@ const postAddBook = async (req, res, next) => {
         category,
         availability: availability === "on",
         imageUrl,
+        pdf, // <- new field
+        description, // <- new field
       });
       await book.save();
       req.flash("successMessage", "Book Saved");

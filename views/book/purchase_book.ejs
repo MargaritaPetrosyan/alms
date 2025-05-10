@@ -1,0 +1,60 @@
+<div class="purchase-page">
+  <header class="purchase-page__header">
+    <h1 class="purchase-page__title">Purchase Book</h1>
+    <p class="purchase-page__subtitle">
+      Complete your order and enjoy reading!
+    </p>
+  </header>
+
+  <section class="purchase-page__book-info">
+    <img
+      class="purchase-page__book-cover"
+      alt="Cover of <%= book.title %>"
+      src="<%= book.imageUrl %>"
+    />
+    <div class="purchase-page__book-details">
+      <h2 class="purchase-page__book-title"><%= book.title %></h2>
+      <p class="purchase-page__book-author">by <%= book.author %></p>
+      <p class="purchase-page__book-category"><%= book.category %></p>
+      <p class="purchase-page__book-price"><%= book.price %></p>
+    </div>
+  </section>
+
+  <section class="purchase-page__form">
+    <h3 class="purchase-page__form-title">Enter Your Details</h3>
+    <form class="purchase-page__purchase-form" action="/purchase" method="POST">
+      <label for="name" class="purchase-page__form-label">Full Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="purchase-page__form-input"
+        required
+      />
+
+      <label for="email" class="purchase-page__form-label">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="purchase-page__form-input"
+        required
+      />
+
+      <label for="address" class="purchase-page__form-label"
+        >Shipping Address</label
+      >
+      <input
+        type="text"
+        id="address"
+        name="address"
+        class="purchase-page__form-input"
+        required
+      />
+
+      <button type="submit" class="purchase-page__submit-button">
+        Complete Purchase
+      </button>
+    </form>
+  </section>
+</div>

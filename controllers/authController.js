@@ -41,7 +41,10 @@ const postRegister = async (req, res, next) => {
   try {
     const user = await User.findOne({ email });
     if (user) {
-      req.flash("errorMessage", "E-Mail exists already, please pick a different one.");
+      req.flash(
+        "errorMessage",
+        "E-Mail exists already, please pick a different one."
+      );
       return res.redirect("/register");
     } else {
       const hashedPassword = await bcrypt.hash(password, 12);
@@ -59,11 +62,11 @@ const postRegister = async (req, res, next) => {
 };
 
 const getLogout = (req, res, next) => {
-  req.session.destroy(err => {
+  req.session.destroy((err) => {
     if (err) {
       console.error(err);
     } else {
-      res.redirect('/');
+      res.redirect("/");
     }
   });
 };

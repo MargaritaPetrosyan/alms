@@ -56,6 +56,23 @@
           required
         />
       </div>
+      <div class="edit-book__form-item">
+        <label class="edit-book__label" for="description">Description</label>
+        <textarea class="edit-book__input" name="description" rows="4" required>
+<%= book.description %></textarea
+        >
+      </div>
+
+      <div class="edit-book__form-item">
+        <label class="edit-book__label" for="pdf">PDF URL</label>
+        <input
+          class="edit-book__input"
+          type="url"
+          name="pdf"
+          value="<%= book.pdf %>"
+        />
+      </div>
+
       <div class="edit-book__availability">
         <input
           class="edit-book__availability-checkbox"
