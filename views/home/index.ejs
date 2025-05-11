@@ -1,13 +1,13 @@
 <div class="home">
   <h1 class="home-title">Academy Library</h1>
   <h2 class="collection-title">Collection of Books</h2>
-  <div class="book-grid-container">
+  <div class="book-grid-container catalog__book-flex">
     <% books.forEach(book => { %>
     <div class="book-grid-item">
       <a href="/book/<%= book.isbn %>" class="book-link">
-        <img src="<%= book.imageUrl %>" style="width: auto; height: 500px" />
-        <h3 style="width: 400px"><%= book.title %></h3>
-        <p><%= book.author %></p>
+        <img src="<%= book.imageUrl %>" class="catalog__book-image" />
+        <h3 class="catalog__book-title"><%= book.title %></h3>
+        <p class="catalog__book-author"><%= book.author %></p>
       </a>
     </div>
     <% }) %>

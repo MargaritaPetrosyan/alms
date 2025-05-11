@@ -1,18 +1,26 @@
 .footer {
-  background-color: rgb(117 97 86 / 97%);
+  background-color: rgba(117, 97, 86, 0.97);
   color: white;
-  padding-top: 25px;
+
   padding-bottom: 10px;
   position: relative;
   margin-top: auto;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20px;
 
+  &__logo img {
+    height: 50px;
+    padding-right: 45px;
+  }
   &__container {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+
+    padding: 0 150px;
   }
 
   &__section {
@@ -48,6 +56,10 @@
     display: flex;
     justify-content: center;
     padding-top: 10px;
+
+    &--p {
+      padding-top: 18px;
+    }
   }
 }
 

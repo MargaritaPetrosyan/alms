@@ -7,9 +7,8 @@
 
 body {
   font-family: Montserrat, sans-serif;
-  background-image: url("/images/background-image.png");
-  background-size: cover;
-  background-position: center;
+  background-color: #e9e4e2;
+  clip-path: polygon();
   position: relative; /* Needed for the pseudo-element positioning */
   display: flex;
   flex-direction: column;
@@ -23,7 +22,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+
   pointer-events: none; /* Ensures the overlay doesn't block interactions */
   filter: blur(15px);
   z-index: -1; /* Sends the overlay behind the content */

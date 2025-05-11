@@ -23,13 +23,7 @@
         <h3 class="catalog__book-title"><%= book.title %></h3>
         <p class="catalog__book-author"><%= book.author %></p>
 
-        <% if (book.availability) { %>
-        <button class="catalog__availability-button" disabled>Available</button>
-        <% } else { %>
-        <button class="catalog__unavailability-button" disabled>
-          Unavailable
-        </button>
-        <% } %> <% if (book.pdf) { %>
+        <% if (book.pdf) { %>
         <a href="<%= book.pdf %>" target="_blank" class="catalog__pdf-link"></a>
         <% } %>
       </a>

@@ -57,6 +57,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
+  padding-left: 110px;
 }
 
 .add-book {
@@ -80,6 +81,7 @@
   font-size: 30px;
   font-family: Montserrat, sans-serif;
   margin-bottom: 20px;
+  padding-top: 12px;
 }
 .add-book__error-text, .add-book__success-text {
   text-align: center;
@@ -135,8 +137,11 @@
   gap: 20px;
   align-items: center;
 }
+.book-link {
+  text-decoration: none;
+}
 .book__cover {
-  width: auto;
+  width: 300px;
   height: 500px;
   border: 1px solid #ddd;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -251,9 +256,9 @@
 .catalog__book-flex {
   display: flex;
   flex-wrap: wrap;
-  padding: 100px;
+  padding: 90px;
   justify-content: space-around;
-  gap: 150px;
+  gap: 130px;
 }
 .catalog__book-link {
   text-decoration: none;
@@ -262,10 +267,17 @@
   width: 300px;
   height: 500px;
 }
-.catalog__book-title, .catalog__book-author {
+.catalog__book-title {
   font-family: Montserrat, sans-serif;
   color: #000000;
-  text-shadow: 2px 2px 4px #ffffff;
+  width: 300px;
+  font-size: 20px;
+  padding-top: 12px;
+}
+.catalog__book-author {
+  padding-top: 6px;
+  font-family: Montserrat, sans-serif;
+  color: #000000;
   width: 300px;
   font-size: 20px;
 }
@@ -355,9 +367,8 @@
 
 body {
   font-family: Montserrat, sans-serif;
-  background-image: url("/images/background-image.png");
-  background-size: cover;
-  background-position: center;
+  background-color: #e9e4e2;
+  clip-path: polygon();
   position: relative; /* Needed for the pseudo-element positioning */
   display: flex;
   flex-direction: column;
@@ -371,7 +382,6 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
   pointer-events: none; /* Ensures the overlay doesn't block interactions */
   filter: blur(15px);
   z-index: -1; /* Sends the overlay behind the content */
@@ -426,7 +436,7 @@ body::before {
 }
 
 .header {
-  background-color: rgba(162, 152, 147, 0.8);
+  background-color: rgba(117, 97, 86, 0.97);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .header__nav {
@@ -437,8 +447,8 @@ body::before {
   color: #e8dde0;
 }
 .header__logo img {
-  height: 50px;
-  border-radius: 10%;
+  height: 60px;
+  padding-left: 15px;
 }
 .header__nav-links {
   list-style: none;
@@ -502,39 +512,45 @@ body::before {
   margin-top: 40px;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
 }
 
 .home-title {
-  font-size: 80px;
+  font-size: 70px;
   font-family: Montserrat, sans-serif;
-  color: #e8dde0;
+  color: #866a72;
   font-weight: lighter;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .collection-title {
-  font-size: 40px;
+  font-size: 35px;
   font-family: Montserrat, sans-serif;
-  color: #f3e5be;
+  color: #ae9595;
   font-weight: lighter;
 }
 
 .footer {
   background-color: rgba(117, 97, 86, 0.97);
   color: white;
-  padding-top: 25px;
   padding-bottom: 10px;
   position: relative;
   margin-top: auto;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.footer__logo img {
+  height: 50px;
+  padding-right: 45px;
 }
 .footer__container {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 150px;
 }
 .footer__section h3.footer__title {
   margin-bottom: 10px;
@@ -563,6 +579,9 @@ body::before {
   justify-content: center;
   padding-top: 10px;
 }
+.footer__copyright--p {
+  padding-top: 18px;
+}
 
 .simple-footer {
   width: 100%;
@@ -585,7 +604,6 @@ body::before {
 }
 
 .btn, .btn:link, .btn:visited {
-  text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
   display: inline-block;
@@ -616,9 +634,8 @@ body::before {
 }
 
 .view-all-btn {
-  font-size: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  font-size: 20px;
+  margin-bottom: 80px;
   background-color: rgba(132, 113, 102, 0.88);
   color: white;
 }

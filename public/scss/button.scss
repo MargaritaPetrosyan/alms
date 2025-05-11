@@ -2,7 +2,6 @@
   &,
   &:link,
   &:visited {
-    text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
     display: inline-block;
@@ -41,11 +40,9 @@
   }
 }
 .view-all-btn {
-  font-size: 30px;
+  font-size: 20px;
 
-  margin-top: 30px;
-  margin-bottom: 30px;
-
+  margin-bottom: 80px;
   background-color: rgb(132 113 102 / 88%);
   color: white;
 }
