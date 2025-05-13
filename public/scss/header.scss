@@ -1,7 +1,8 @@
 // Base header styles
 .header {
-  background-color: rgba(117, 97, 86, 0.97);
+  background-color: #5f8575;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 
   &__nav {
     display: flex;
@@ -36,7 +37,7 @@
     padding: 5px 10px;
 
     &--active {
-      color: white;
+      text-decoration: overline;
     }
   }
 
@@ -81,4 +82,9 @@
       }
     }
   }
+}
+.underline-spacing {
+  text-decoration: underline;
+  text-underline-offset: 4px; /* space between text and underline */
+  text-decoration-color: #cb684d;
 }

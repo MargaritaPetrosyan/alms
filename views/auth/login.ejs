@@ -5,22 +5,46 @@
       <% if (errorMessage) { %>
       <p class="login__error-text"><%= errorMessage %></p>
       <% } %>
-      <form action="/login" method="POST" class="login__form-element">
+      <form
+        action="/login"
+        method="POST"
+        class="login__form-element"
+        autocomplete="off"
+      >
+        <!-- Dummy field to mislead browser autofill -->
+        <input
+          type="text"
+          name="fake-user"
+          id="fake-user"
+          style="display: none"
+          autocomplete="username"
+        />
+
         <div class="login__input-group">
           <label for="email" class="login__label">Email Address</label>
-          <input type="email" name="email" required class="login__input" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            class="login__input"
+            autocomplete="off"
+          />
         </div>
         <div class="login__input-group">
           <label for="password" class="login__label">Password</label>
           <input
             type="password"
             name="password"
+            id="password"
             required
             class="login__input"
+            autocomplete="new-password"
           />
         </div>
         <button type="submit" class="login__submit-button">Submit</button>
       </form>
+
       <a href="/register" class="login__register-link"
         >Switch to Registration</a
       >

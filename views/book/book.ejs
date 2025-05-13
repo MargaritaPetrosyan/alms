@@ -7,7 +7,7 @@
   <div class="book__details">
     <h2 class="book__title"><%= book.title %></h2>
     <p class="book__author"><%= book.author %></p>
-    <p class="book__category"><%= book.category %></p>
+
     <p class="book__description"><%= book.description %></p>
     <!-- new -->
 
@@ -22,18 +22,6 @@
         <button type="submit" class="book__delete-button">Delete</button>
       </form>
     </div>
-    <% } %>
-  </div>
-
-  <div class="book__availability">
-    <% if (book.availability) { %>
-    <button class="btn btn-availability">Available</button>
-    <% if (book.pdf) { %>
-    <a href="<%= book.pdf %>" target="_blank" class="btn btn-availability"
-      >View PDF</a
-    >
-    <% } %> <% } else { %>
-    <button class="">Unavailable</button>
     <% } %>
   </div>
 
@@ -53,6 +41,17 @@
       </div>
       <% }); %>
     </div>
+    <% } %>
+  </div>
+  <div class="book__availability">
+    <% if (book.availability) { %>
+    <button class="btn btn-availability">Available</button>
+    <% if (book.pdf) { %>
+    <button href="<%= book.pdf %>" target="_blank" class="btn btn-availability">
+      View PDF
+    </button>
+    <% } %> <% } else { %>
+    <button class="">Unavailable</button>
     <% } %>
   </div>
 </div>

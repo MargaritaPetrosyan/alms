@@ -1,13 +1,34 @@
+.main-content {
+  background-image: url("/images/book.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.main-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .login {
   display: flex;
   margin: 200px 0;
+  position: relative;
 }
 .login__form {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.2705882353);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 427px;
@@ -17,6 +38,7 @@
   font-size: 30px;
   font-family: "Montserrat", sans-serif;
   margin-bottom: 20px;
+  color: white;
 }
 .login__form form div {
   display: flex;
@@ -26,20 +48,20 @@
 }
 .login__form form label {
   margin-bottom: 5px;
+  color: #3e6857;
 }
 .login__form form input {
   width: 100%;
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  color: black;
 }
 .login__form form button {
   width: 100%;
   padding: 9px;
   font-size: 17px;
   font-family: "Montserrat", sans-serif;
-  background-color: rgba(0, 0, 0, 0.778);
+  background-color: #cb684d;
   color: white;
   border: none;
   border-radius: 4px;
@@ -49,7 +71,7 @@
   text-align: center;
   margin-top: 20px;
   text-decoration: none;
-  color: #008080;
+  color: white;
 }
 
 .book-grid-container {
@@ -71,10 +93,12 @@
   flex-direction: column;
   align-items: center;
   padding: 30px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.2705882353);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 427px;
+  margin: 100px;
+  z-index: 1;
 }
 .add-book__title {
   text-align: center;
@@ -82,6 +106,7 @@
   font-family: Montserrat, sans-serif;
   margin-bottom: 20px;
   padding-top: 12px;
+  color: white;
 }
 .add-book__error-text, .add-book__success-text {
   text-align: center;
@@ -99,6 +124,7 @@
 }
 .add-book__label {
   font-size: 16px;
+  color: white;
 }
 .add-book__input {
   width: 100%;
@@ -111,6 +137,8 @@
   flex-direction: row !important;
   justify-content: start;
   gap: 10px;
+  padding-bottom: 20px;
+  color: white;
 }
 .add-book__availability-checkbox {
   width: 20px !important;
@@ -123,7 +151,7 @@
   padding: 9px;
   font-size: 17px;
   font-family: Montserrat, sans-serif;
-  background-color: rgba(0, 0, 0, 0.778);
+  background-color: rgba(117, 97, 86, 0.97);
   color: white;
   border: none;
   border-radius: 4px;
@@ -135,16 +163,17 @@
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 20px;
-  align-items: center;
+  column-gap: 100px;
+  align-items: start; /* Align all items to the top */
 }
 .book-link {
   text-decoration: none;
 }
 .book__cover {
-  width: 300px;
   height: 500px;
+  width: 350px;
   border: 1px solid #ddd;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.2);
   object-fit: cover;
   border-radius: 5px;
   transition: transform 0.3s ease;
@@ -155,18 +184,23 @@
 .book__details {
   display: flex;
   flex-direction: column;
-  gap: 30px;
 }
 .book__title {
   font-size: 1.875em;
   width: 800px;
-  height: 100px;
+  height: auto;
+  color: #3e6857;
 }
-.book__author, .book__category {
+.book__author {
   font-size: 1.25em;
+  padding-top: 10px;
+  color: #cb684d;
 }
 .book__description {
   font-size: 1.25em;
+  padding-top: 50px;
+  line-height: 30px;
+  color: #7e7e86;
 }
 .book__admin-actions {
   display: flex;
@@ -211,7 +245,7 @@
 }
 .book__availability {
   display: flex;
-  gap: 40px;
+  gap: 50px;
 }
 
 .catalog {
@@ -232,23 +266,14 @@
   padding: 10px 10px 10px 35px;
   border: 2px solid #ddd;
   border-right: none;
-  border-radius: 60px 0 0 60px;
+  border-radius: 12px;
   width: 50%;
-  background: url("/images/search-icon.png") no-repeat 10px center;
-  background-size: 15px;
+  background: url("/images/search-icon.png") no-repeat 1px center;
+  background-size: 36px;
   background-color: white;
-  color: #757575;
+  color: #abb7c3;
   font-size: 18px;
-}
-.catalog__search-button {
-  font-size: 18px;
-  padding: 10px 20px;
-  border: 2px solid #ddd;
-  border-left: none;
-  background-color: #d8d5d4;
-  color: #757575;
-  cursor: pointer;
-  border-radius: 0 60px 60px 0;
+  height: 50px;
 }
 .catalog__search-button:hover {
   background-color: #e7e7e7;
@@ -264,12 +289,13 @@
   text-decoration: none;
 }
 .catalog__book-image {
-  width: 300px;
+  width: 350px;
+  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.2);
   height: 500px;
 }
 .catalog__book-title {
   font-family: Montserrat, sans-serif;
-  color: #000000;
+  color: #3e6857;
   width: 300px;
   font-size: 20px;
   padding-top: 12px;
@@ -277,17 +303,18 @@
 .catalog__book-author {
   padding-top: 6px;
   font-family: Montserrat, sans-serif;
-  color: #000000;
+  color: #cb684d;
   width: 300px;
   font-size: 20px;
 }
 .catalog__book-title {
   font-size: 24px;
+  color: #3e6857;
 }
 .catalog__book-author {
   font-size: 18px;
   margin-top: 5px;
-  opacity: 0.8;
+  color: #cb684d;
 }
 .catalog__book-item:hover .catalog__book-title, .catalog__book-item:hover .catalog__book-author {
   transform: scale(1.05);
@@ -362,17 +389,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #e8dde0;
 }
 
 body {
   font-family: Montserrat, sans-serif;
   background-color: #e9e4e2;
-  clip-path: polygon();
-  position: relative; /* Needed for the pseudo-element positioning */
+  position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensures full height even with little content */
+  min-height: 100vh;
 }
 
 body::before {
@@ -436,8 +461,9 @@ body::before {
 }
 
 .header {
-  background-color: rgba(117, 97, 86, 0.97);
+  background-color: #5f8575;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 .header__nav {
   display: flex;
@@ -468,7 +494,7 @@ body::before {
   padding: 5px 10px;
 }
 .header__nav-link--active {
-  color: white;
+  text-decoration: overline;
 }
 .header__name {
   color: rgba(132, 113, 102, 0.88);
@@ -507,6 +533,12 @@ body::before {
   border-radius: 10px;
 }
 
+.underline-spacing {
+  text-decoration: underline;
+  text-underline-offset: 4px; /* space between text and underline */
+  text-decoration-color: #cb684d;
+}
+
 .home {
   display: flex;
   margin-top: 40px;
@@ -518,7 +550,7 @@ body::before {
 .home-title {
   font-size: 70px;
   font-family: Montserrat, sans-serif;
-  color: #866a72;
+  color: #3e6857;
   font-weight: lighter;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -526,12 +558,12 @@ body::before {
 .collection-title {
   font-size: 35px;
   font-family: Montserrat, sans-serif;
-  color: #ae9595;
+  color: #7e7e86;
   font-weight: lighter;
 }
 
 .footer {
-  background-color: rgba(117, 97, 86, 0.97);
+  background-color: #5f8575;
   color: white;
   padding-bottom: 10px;
   position: relative;
@@ -586,7 +618,7 @@ body::before {
 .simple-footer {
   width: 100%;
   padding: 10px 0;
-  background: #333;
+  background: rgba(117, 97, 86, 0.97);
   color: #fff;
   text-align: center;
   font-family: Montserrat, sans-serif;
@@ -607,7 +639,7 @@ body::before {
   text-decoration: none;
   padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 10rem;
+  border-radius: 12px;
   transition: all 0.2s;
   position: relative;
   border: none;
@@ -636,23 +668,28 @@ body::before {
 .view-all-btn {
   font-size: 20px;
   margin-bottom: 80px;
-  background-color: rgba(132, 113, 102, 0.88);
+  background-color: #cb684d;
   color: white;
 }
 
 .view-all-btn:hover {
-  background-color: rgba(117, 97, 86, 0.97);
+  background-color: #d28346;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
 .btn-availability {
   font-size: 20px;
+  font-size: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
-  background-color: rgba(132, 113, 102, 0.88);
+  background-color: #cb684d;
   color: white;
   text-transform: none;
+  width: 136px;
+  height: 56px;
+  padding: 12px 16px;
+  align-content: center;
 }
 
 .btn-availability:hover {
