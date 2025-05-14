@@ -66,10 +66,11 @@
 .simple-footer {
   width: 100%;
   padding: 10px 0;
-  background: rgba(117, 97, 86, 0.97);
+  background: #5f8575;
   color: #fff;
   text-align: center;
   font-family: Montserrat, sans-serif;
+  z-index: 10;
 
   &-content {
     margin: 0 auto;

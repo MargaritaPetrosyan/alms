@@ -8,15 +8,13 @@
     border-radius: 12px;
     transition: all 0.2s;
     position: relative;
-
-    //Changes for <button> element
     border: none;
     cursor: pointer;
   }
 
   &:hover {
     transform: translateY(-0.3rem);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1rem 2rem #bc501cc9;
 
     &:after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -48,7 +46,7 @@
 }
 
 .view-all-btn:hover {
-  background-color: #d28346;
+  background-color: #bc501cc9;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
@@ -67,7 +65,43 @@
   align-content: center;
 }
 .btn-availability:hover {
-  background-color: rgba(117, 97, 86, 0.97);
+  background-color: #bc501cc9;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+.btn-pdf {
+  padding: 12px 16px;
+  text-decoration: none;
+
+  display: inline-block;
+  border-radius: 12px;
+  transition: all 0.2s;
+  position: relative;
+
+  border: none;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+
+    &:after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    //clickic heto
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  &:after {
+    background-color: rgb(117, 97, 86, 0.4);
+  }
+  &--animated {
+    animation: moveInButton 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
 }

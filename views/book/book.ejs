@@ -10,19 +10,6 @@
 
     <p class="book__description"><%= book.description %></p>
     <!-- new -->
-
-    <% if (isAdmin) { %>
-    <div class="book__admin-actions">
-      <a class="book__edit-button" href="/edit-book/<%= book.isbn %>">Edit</a>
-      <form
-        class="book__delete-form"
-        action="/book-delete/<%= book.isbn %>"
-        method="post"
-      >
-        <button type="submit" class="book__delete-button">Delete</button>
-      </form>
-    </div>
-    <% } %>
   </div>
 
   <div class="book__related">
@@ -44,14 +31,20 @@
     <% } %>
   </div>
   <div class="book__availability">
-    <% if (book.availability) { %>
-    <button class="btn btn-availability">Available</button>
     <% if (book.pdf) { %>
-    <button href="<%= book.pdf %>" target="_blank" class="btn btn-availability">
+    <a href="<%= book.pdf %>" target="_blank" class="btn-pdf btn-availability">
       View PDF
-    </button>
-    <% } %> <% } else { %>
-    <button class="">Unavailable</button>
-    <% } %>
+    </a>
+    <% if (isAdmin) { %>
+    <div class="book__admin-actions">
+      <form
+        class="book__delete-form"
+        action="/book-delete/<%= book.isbn %>"
+        method="post"
+      >
+        <button type="submit" class="btn btn-availability">Delete</button>
+      </form>
+    </div>
+    <% } %> <% } %>
   </div>
 </div>
