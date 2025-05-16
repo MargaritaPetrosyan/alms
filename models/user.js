@@ -11,6 +11,14 @@ const schema = new Schema({
     type: String,
     required: true,
   },
+  verificationToken: {
+    type: String,
+    required: false,
+  },
+  resetPasswordToken: {
+    type: String,
+    required: false,
+  },
   password: {
     type: String,
     required: true,
@@ -18,9 +26,9 @@ const schema = new Schema({
   role: {
     type: String,
     required: true,
-    enum: ['user', 'admin'],
-    default: 'user'   
-  }
+    enum: ["user", "admin"],
+    default: "user",
+  },
 });
 
 module.exports = mongoose.model("User", schema);
