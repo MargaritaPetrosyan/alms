@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 const User = require("../models/user");
 const { sendVerificationEmail, sendResetPasswordEmail } = require("../mailer");
+const { styleText } = require("util");
 
 const getLogin = (req, res, next) => {
   if (req.isAuth) {
@@ -21,12 +22,12 @@ const postLogin = async (req, res, next) => {
     const user = await User.findOne({ email });
     if (!user) {
       req.flash("errorMessage", "Invalid email or password.");
-      res.redirect("/login");
+      return res.redirect("/login");
     }
 
     if (user.verificationToken) {
-      req.flash("errorMessage", "You should verify you email to login.");
-      res.redirect("/login");
+      req.flash("errorMessage", "You should verify your email to login.");
+      return res.redirect("/login");
     }
 
     const doMatch = await bcrypt.compare(password, user.password);
@@ -36,17 +37,16 @@ const postLogin = async (req, res, next) => {
       return req.session.save((err) => {
         if (err) {
           console.error(err);
-        } else {
-          res.redirect("/");
-          return;
         }
+        return res.redirect("/"); // ✅ redirect to homepage or dashboard
       });
     }
+
     req.flash("errorMessage", "Invalid email or password.");
-    res.redirect("/login");
+    return res.redirect("/login");
   } catch (err) {
     console.error(err);
-    res.redirect("/login");
+    return res.redirect("/login");
   }
 };
 
@@ -57,7 +57,6 @@ const getRegister = (req, res, next) => {
 
   res.render("auth/register", { pageTitle: "Register", footer: "simple" });
 };
-
 const postRegister = async (req, res, next) => {
   if (req.isAuth) {
     return res.redirect("/");
@@ -66,30 +65,42 @@ const postRegister = async (req, res, next) => {
   const { email, password, fullName } = req.body;
 
   try {
-    const user = await User.findOne({ email });
-    if (user) {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
       req.flash(
         "errorMessage",
         "E-Mail exists already, please pick a different one."
       );
       return res.redirect("/register");
-    } else {
-      const hashedPassword = await bcrypt.hash(password, 12);
-      const verificationToken = crypto.randomBytes(16).toString("hex");
-
-      const user = new User({
-        email,
-        password: hashedPassword,
-        fullName,
-        verificationToken,
-      });
-      await user.save();
-      await sendVerificationEmail(email, fullName, verificationToken);
-
-      res.redirect("/login");
     }
+
+    const hashedPassword = await bcrypt.hash(password, 12);
+    const verificationToken = crypto.randomBytes(16).toString("hex");
+
+    const newUser = new User({
+      email,
+      password: hashedPassword,
+      fullName,
+      verificationToken,
+    });
+
+    await newUser.save();
+    await sendVerificationEmail(email, fullName, verificationToken);
+
+    // Auto login the user
+    req.session.isAuth = true;
+    req.session.userId = newUser._id;
+
+    return req.session.save((err) => {
+      if (err) {
+        console.error(err);
+        return res.redirect("/login");
+      }
+      return res.redirect("/"); // Or wherever your logged-in user homepage is
+    });
   } catch (err) {
     console.error(err);
+    return res.redirect("/register");
   }
 };
 
